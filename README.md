@@ -177,6 +177,8 @@ Run the scalper with command-line arguments to override trading parameters:
 - [mFAST GitHub](https://github.com/objectcomputing/mFAST)
 - [FIX Protocol](https://www.fixtrading.org/)
 - [FAST Protocol](https://www.fixtrading.org/standards/fast/)
+- [Developing a Simple C++ Scalper Using FAST/FIX: Step-by-Step Guide](https://marketmaker.cc/en/blog/post/scalper-cpp-fast-fix)
+- [Протокол FIX/FAST: От Технаря OSA Engines](https://smart-lab.ru/blog/1036127.php)
 
 ## Disclaimer
 This project is for educational and research purposes. Use at your own risk. Always test thoroughly on demo environments before trading with real funds. 
