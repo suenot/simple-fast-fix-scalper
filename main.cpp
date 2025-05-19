@@ -6,7 +6,7 @@
 SimpleScalper* globalScalper = nullptr;
 
 void signalHandler(int signal) {
-    std::cout << "\nПолучен сигнал завершения. Останавливаю скальпер..." << std::endl;
+    std::cout << "\nTermination signal received. Stopping scalper..." << std::endl;
     if (globalScalper) {
         globalScalper->stop();
     }
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     double profitTarget = 0.1;
     double tradeAmount = 0.1;
 
-    // Парсинг аргументов командной строки
+    // Parse command line arguments
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
         if (arg == "--sender" && i + 1 < argc) senderCompID = argv[++i];
@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
     try {
         scalper.run();
     } catch (const std::exception& e) {
-        std::cerr << "Ошибка: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
     return 0;
