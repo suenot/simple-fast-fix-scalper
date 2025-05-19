@@ -51,21 +51,22 @@
 ## Scalper Algorithm (Mermaid)
 
 ```mermaid
-flowchart TD
- A([Start]) --> B{Receive Market Data}
- B --> C[Update Price History]
- C --> D{In Position}
- D -- No --> E{RSI 30}
- E -- Yes --> F[Enter Long (Buy)]
- F --> B
- E -- No --> G{RSI 70}
- G -- Yes --> H[Enter Short (Sell)]
- H --> B
- G -- No --> B
- D -- Yes --> I{Should Exit}
- I -- Yes --> J[Exit Position]
- J --> B
- I -- No --> B
+graph TD
+  A([Start]) --> B{Receive Market Data}
+  B --> C[Update Price History]
+  C --> D{In Position?}
+  D -- No --> E{RSI < 30?}
+  E -- Yes --> F[Enter Long Buy]
+  F --> B
+  E -- No --> G{RSI > 70?}
+  G -- Yes --> H[Enter Short Sell]
+  H --> B
+  G -- No --> B
+  D -- Yes --> I{Should Exit?}
+  I -- Yes --> J[Exit Position]
+  J --> B
+  I -- No --> B
+
 ```
 
 - **RSI**: Relative Strength Index, calculated over recent price history.
